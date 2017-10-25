@@ -1,0 +1,8 @@
+c:\Users\kaorti\code\microsoft_class\c_sharp\logReg\bin\Debug\netcoreapp1.1\logReg.deps.json
+c:\Users\kaorti\code\microsoft_class\c_sharp\logReg\bin\Debug\netcoreapp1.1\logReg.runtimeconfig.json
+c:\Users\kaorti\code\microsoft_class\c_sharp\logReg\bin\Debug\netcoreapp1.1\logReg.runtimeconfig.dev.json
+c:\Users\kaorti\code\microsoft_class\c_sharp\logReg\obj\Debug\netcoreapp1.1\logReg.AssemblyInfo.cs
+C:\Users\kaorti\code\microsoft_class\c_sharp\logReg\bin\Debug\netcoreapp1.1\logReg.dll
+C:\Users\kaorti\code\microsoft_class\c_sharp\logReg\bin\Debug\netcoreapp1.1\logReg.pdb
+C:\Users\kaorti\code\microsoft_class\c_sharp\logReg\obj\Debug\netcoreapp1.1\logReg.dll
+C:\Users\kaorti\code\microsoft_class\c_sharp\logReg\obj\Debug\netcoreapp1.1\logReg.pdb
