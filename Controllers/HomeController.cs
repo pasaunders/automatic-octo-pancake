@@ -10,10 +10,15 @@ namespace logReg.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
+        [Route("")]
         public IActionResult Index()
         {
             return View();
         }
+
+        [HttpPost]
+        [Route("Register")]
         public IActionResult Register(ViewUser user)
         {
             if(ModelState.IsValid)
@@ -23,10 +28,13 @@ namespace logReg.Controllers
                 string email = user.email;
                 string password = user.password;
                 DbConnector.Execute($"INSERT INTO user(firstName, lastName, email, password) VALUES ({firstName}, {lastName}, {email}, {password});");
-                return View();
+                return View("Register");
             }
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        [Route("login")]
         public IActionResult Login(string firstName, string password)
         {
             List<Dictionary<string,object>> AllUsers = DbConnector.Query("SELECT * FROM users");

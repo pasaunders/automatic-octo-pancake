@@ -1,6 +1,6 @@
 ﻿@model logReg.Models.ViewUser
 
-<form asp-controller="ViewUser" asp-action="Register" method="post">
+<form asp-controller="Home" asp-action="Register" method="post">
     <label asp-for="firstName"></label>
     <input asp-for="firstName">
     <label asp-for="lastName"></label>
@@ -12,4 +12,12 @@
     <label asp-for="confirmPassword"></label>
     <input asp-for="confirmPassword">
     <input type="submit" value="Create User">
+</form>
+
+<form asp-controller="Home" asp-action="login" method="post">
+    <label asp-for="firstName"></label>
+    <input asp-for="firstName">
+    <label asp-for="password"></label>
+    <input asp-for="password">
+    <input type="submit" value="Login">
 </form>

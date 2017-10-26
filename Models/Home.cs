@@ -7,11 +7,9 @@ namespace logReg.Models
     {
         [Required]
         [MinLength(2)]
-        [RegularExpression(@"\w")]
         public string firstName { get; set; }
         [Required]
         [MinLength(2)]
-        [RegularExpression(@"\w")]
         public string lastName { get; set; }
         [Required]
         [EmailAddress]
