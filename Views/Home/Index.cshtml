@@ -1,23 +1,23 @@
-﻿@model logReg.Models.ViewUser
+﻿@model logReg.Models.Index
 
 <form asp-controller="Home" asp-action="Register" method="post">
-    <label asp-for="firstName"></label>
-    <input asp-for="firstName">
-    <label asp-for="lastName"></label>
-    <input asp-for="lastName">
-    <label asp-for="email"></label>
-    <input asp-for="email">
-    <label asp-for="password"></label>
-    <input asp-for="password">
-    <label asp-for="confirmPassword"></label>
-    <input asp-for="confirmPassword">
+    <label asp-for="user.firstName"></label>
+    <input asp-for="user.firstName">
+    <label asp-for="user.lastName"></label>
+    <input asp-for="user.lastName">
+    <label asp-for="user.email"></label>
+    <input asp-for="user.email">
+    <label asp-for="user.password"></label>
+    <input asp-for="user.password">
+    <label asp-for="user.confirmPassword"></label>
+    <input asp-for="user.confirmPassword">
     <input type="submit" value="Create User">
 </form>
 
 <form asp-controller="Home" asp-action="login" method="post">
-    <label asp-for="firstName"></label>
-    <input asp-for="firstName">
-    <label asp-for="password"></label>
-    <input asp-for="password">
+    <label asp-for="login.firstName"></label>
+    <input asp-for="login.firstName">
+    <label asp-for="login.password"></label>
+    <input asp-for="login.password">
     <input type="submit" value="Login">
 </form>

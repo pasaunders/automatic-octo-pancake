@@ -19,15 +19,13 @@ namespace logReg.Controllers
 
         [HttpPost]
         [Route("Register")]
-        public IActionResult Register(ViewUser user)
+        public IActionResult Register(Index pageData)
         {
+            User registerData = pageData.user;
+            TryValidateModel(registerData);
             if(ModelState.IsValid)
             {
-                string firstName = user.firstName;
-                string lastName = user.lastName;
-                string email = user.email;
-                string password = user.password;
-                DbConnector.Execute($"INSERT INTO user(firstName, lastName, email, password) VALUES ({firstName}, {lastName}, {email}, {password});");
+                DbConnector.Execute($@"INSERT INTO user (firstName, lastName, email, password) VALUES ('{registerData.firstName}', '{registerData.lastName}', '{registerData.email}', '{registerData.password}');");
                 return View("Register");
             }
             return RedirectToAction("Index");
@@ -35,13 +33,18 @@ namespace logReg.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IActionResult Login(string firstName, string password)
+        public IActionResult Login(Index pageData)
         {
-            List<Dictionary<string,object>> AllUsers = DbConnector.Query("SELECT * FROM users");
-            int usercheck = AllUsers.FindIndex(item => item["firstName"] == firstName);
-            if((usercheck >= 0) && (password == AllUsers[usercheck]["password"]))
+            Login loginData = pageData.login;
+            TryValidateModel(loginData);
+            if (ModelState.IsValid)
             {
-                return View();
+                List<Dictionary<string,object>> userCheck = DbConnector.Query($"SELECT * FROM user WHERE firstName='{loginData.firstName}';");
+                if((userCheck.Count == 0) || ((string)userCheck[0]["password"] != loginData.password))
+                {
+                    return RedirectToAction("Index");
+                }    
+                return View("Login");
             }
             return RedirectToAction("Index");
         }
